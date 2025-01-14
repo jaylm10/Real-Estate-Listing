@@ -1,0 +1,125 @@
+/* Overlay for the popup */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* The popup form */
+  .popup-form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Close button */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* Form title */
+  .popup-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  /* Form row */
+  .form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+  }
+  
+  /* Inputs, textarea, and select */
+  input[type="text"],
+  textarea,
+  select {
+    width: 100%;
+    max-width: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  textarea {
+    max-width: 100%;
+    height: 100px;
+    resize: none;
+  }
+  
+  /* Upload photo input */
+  input[type="file"] {
+    display: none;
+  }
+  
+  .upload-label {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #0078ff;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .upload-label:hover {
+    background-color: #005bb5;
+  }
+  
+  /* Submit button */
+  .submit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #218838;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .form-row {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    input[type="text"], select {
+      max-width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .popup-form {
+      padding: 20px;
+    }
+  
+    .popup-form h2 {
+      font-size: 20px;
+    }
+  }
+  

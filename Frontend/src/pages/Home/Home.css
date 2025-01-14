@@ -1,0 +1,129 @@
+/* General styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    min-height: 70vh; 
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    overflow: hidden;
+}
+
+.background-image {
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+    top: 0;
+    background-image: url('../../images/home-background.webp');
+    background-size: cover; /* Ensures the image covers the container */
+    background-repeat: no-repeat; /* Prevents tiling of the image */
+    background-position: center; /* Center-align the image */
+    z-index: -1;
+}
+
+.content {
+    font-family: sans-serif;
+    position: relative; /* Ensure it stays in flow */
+    margin-left: 5%; /* Slightly push content to the left */
+    color: white;
+    padding: 20px;
+    text-align: left;
+}
+
+.content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.search-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px; /* Add spacing between title and search bar */
+}
+
+.search-bar-container .search-bar {
+    flex: 1;
+    width: auto; /* Ensure it adapts to the container */
+    max-width: none; /* Remove global max-width restriction */
+    padding: 15px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.search-bar-container .search-bar:focus {
+    border-color: #007bff;
+}
+.search-button {
+    padding: 17px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+h1 {
+    margin-top: 40px; /* Adjust spacing for "Featured Listings" header */
+    text-align: center;
+}
+
+/* Featured Listings Container */
+.featured-listings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Add space between cards */
+    padding: 20px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .content h1 {
+        font-size: 2.5rem;
+    }
+
+    .search-bar {
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+
+    .search-button {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .content h1 {
+        font-size: 2rem;
+    }
+
+    .search-bar {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+
+    .search-button {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+}

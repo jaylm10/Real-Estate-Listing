@@ -1,0 +1,75 @@
+/* Set the full page height for the container */
+.sell-container {
+    width: 100%;
+    height: 80vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #f0f0f0;
+    overflow: hidden; 
+    margin: 0; 
+}
+  
+  /* Background image styling */
+  .sell-background {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 70vh; /* Image height is 70% of the viewport height */
+    background-image: url(../../images/sell-page.jpg); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .text-overlay {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    max-width: 800px;
+    width: 100%;
+    position: absolute; /* Position relative to the background */
+  }
+  
+
+  .title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    font-weight: lighter;
+    margin-top: 10px;
+  }
+  
+.open-form-button{
+  padding: 10px;
+  margin: 20px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+  /* Make it responsive */
+  @media (max-width: 768px) {
+    .title {
+      font-size: 2.5rem;
+    }
+    .subtitle {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .title {
+      font-size: 1.8rem;
+    }
+    .subtitle {
+      font-size: 0.9rem;
+    }
+  }
+  
