@@ -6,6 +6,8 @@ import CardImg1 from '../../images/home.jpg';
 import CardImg2 from '../../images/La-house.webp';
 import CardImg3 from '../../images/newyork.webp';
 import CardImg4 from '../../images/san.webp';
+import CardImg5 from '../../images/home-house.jpg';
+import CardImg6 from '../../images/home-house1.jpeg';
 import SellIcon from '../../images/sell-icon.png';
 import RentIcon from '../../images/rent-icon.png';
 import HomeCard from '../../components/HomeCard/HomeCard';
@@ -50,7 +52,7 @@ const Home = () => {
       status: 'Active',
     },
     {
-      image: CardImg2,
+      image: CardImg5,
       price: '78000',
       bedrooms: 4,
       bathrooms: 6,
@@ -59,7 +61,7 @@ const Home = () => {
       status: 'Active',
     },
     {
-      image: CardImg3,
+      image: CardImg6,
       price: '67000',
       bedrooms: 2,
       bathrooms: 3,

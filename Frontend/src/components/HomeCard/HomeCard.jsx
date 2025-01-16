@@ -3,9 +3,9 @@ import './HomeCard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
-const HomeCard = ({ cards }) => {
+const HomeCard = ({ cards = [] }) => { // Default value to empty array if cards are not provided
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [cardsPerPage, setCardsPerPage] = useState(1);
+  const [cardsPerPage, setCardsPerPage] = useState(4); // Default to 4 for larger screens
 
   // Update the number of visible cards based on screen size
   useEffect(() => {
@@ -20,30 +20,38 @@ const HomeCard = ({ cards }) => {
       }
     };
 
-    handleResize();
-    window.addEventListener('resize', handleResize);
+    handleResize(); // Call once on mount
+    window.addEventListener('resize', handleResize); // Set up resize event listener
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', handleResize); // Cleanup event listener
     };
   }, []);
 
   const handleNext = () => {
-    if (currentIndex + cardsPerPage < cards.length) {
-      setCurrentIndex(currentIndex + 1);
+    if (currentIndex < cards.length - 1) {
+      setCurrentIndex(currentIndex + 1); // Increase index by 1
     }
   };
 
   const handlePrev = () => {
     if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
+      setCurrentIndex(currentIndex - 1); // Decrease index by 1
     }
   };
+
+  if (!Array.isArray(cards) || cards.length === 0) {
+    return <div>No properties available.</div>; // Display a message if no cards are available
+  }
 
   return (
     <div className="carousel-container">
       <div className="carousel-buttons">
-        <button onClick={handlePrev} disabled={currentIndex === 0} className="carousel-button">
+        <button
+          onClick={handlePrev}
+          disabled={currentIndex === 0}
+          className="carousel-button"
+        >
           <FontAwesomeIcon icon={faChevronLeft} />
         </button>
         <button

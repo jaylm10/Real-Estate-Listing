@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import SignIn from "./pages/SignIn/SignIn";
 import SignUp from "./pages/SignUp/SignUp"
 import Sell from "./pages/Sell/Sell"
+import Buy from "./pages/Buy/Buy"
 import SellForm from "./pages/sellform/SellForm"
 import Home from "./pages/Home/Home";
 import Footer from "./components/footer/Footer";
@@ -24,6 +25,7 @@ function App() {
         <Route path="/signup" element={<SignUp/>} />
         <Route path="/sell" element={<Sell/>} />
         <Route path="/sellform" element={<SellForm/>} />
+        <Route path="/buy" element={<Buy/>} />
         
       </Routes>
       {showHeader && <Footer />}

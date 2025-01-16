@@ -53,6 +53,15 @@
   height: 30vh ;
 }
 
+.card-details{
+  font-size: 15px;
+  
+}
+
+.card-address{
+  font-size: 14px;
+}
+
 .card-info {
   padding: 10px;
 }

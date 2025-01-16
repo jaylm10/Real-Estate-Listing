@@ -1,22 +1,21 @@
-/* Set the full page height for the container */
 .sell-container {
     width: 100%;
-    height: 80vh; 
+    height: 75vh; 
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    background-color: #f0f0f0;
+    background-color: white;
     overflow: hidden; 
     margin: 0; 
 }
   
-  /* Background image styling */
+ 
   .sell-background {
     position: absolute;
     top: 0;
     width: 100%;
-    height: 70vh; /* Image height is 70% of the viewport height */
+    height: 70vh;
     background-image: url(../../images/sell-page.jpg); 
     background-size: cover;
     background-position: center;
@@ -31,9 +30,8 @@
     padding: 20px;
     max-width: 800px;
     width: 100%;
-    position: absolute; /* Position relative to the background */
+    position: absolute; 
   }
-  
 
   .title {
     font-size: 3rem;
@@ -47,13 +45,15 @@
     margin-top: 10px;
   }
   
-.open-form-button{
-  padding: 10px;
-  margin: 20px 10px;
-  border-radius: 5px;
-  cursor: pointer;
+  .open-form-button {
+    padding: 10px;
+    margin: 20px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
   
-}
+ 
+  
   /* Make it responsive */
   @media (max-width: 768px) {
     .title {
@@ -72,4 +72,174 @@
       font-size: 0.9rem;
     }
   }
-  
+
+
+.sell-agent-section {
+  padding: 40px;
+  background-color: #ffffff;
+  text-align: left;
+}
+
+.sell-agent-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.sell-agent-section p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.6; /* Improve readability */
+}
+
+.find-agent-button {
+  background-color: #007aff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.learn-link-container {
+  margin-top: 10px;
+}
+
+.learn-link {
+  color: #007aff;
+  text-decoration: none;
+  font-size: 1rem;
+  display: inline-block;
+}
+
+/* Additional styles for the agent section */
+.sell-agent-info {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+  margin-top: 30px;
+}
+
+.why-sell {
+  flex: 1;
+  padding-right: 20px;
+  list-style: none;
+}
+.why-sell ul li{
+  list-style-type: none; /* Removes the default bullets */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+}
+
+
+.why-sell ul li::before {
+  content: '✔';
+  color: #007aff;
+  margin-right: 10px;
+}
+
+.why-sell h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.why-sell ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.agent-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  margin-top: -200px; 
+}
+
+.agent-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+
+@media (max-width: 1024px) {
+  .sell-agent-info {
+    flex-direction: column; 
+  }
+
+  .agent-image {
+    margin-top: 20px; 
+    justify-content: flex-start;
+  }
+
+  .why-sell {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .sell-agent-section {
+    padding: 20px;
+  }
+
+  .sell-agent-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .sell-agent-section p {
+    font-size: 0.9rem;
+  }
+
+  .find-agent-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .learn-link {
+    font-size: 0.9rem;
+  }
+
+  .agent-image {
+    margin-top: 10px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .sell-agent-section {
+    text-align: center;
+  }
+
+  .sell-agent-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .why-sell {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .agent-image {
+    margin-top: 10px;
+    justify-content: center;
+  }
+
+  .sell-agent-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .sell-agent-section p {
+    font-size: 0.8rem;
+  }
+
+  .find-agent-button {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .learn-link {
+    font-size: 0.8rem;
+  }
+}

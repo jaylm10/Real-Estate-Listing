@@ -1,8 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require("path")
 const MONGO_URL = 'mongodb://localhost:27017/RealEstate';
 const authRouts = require('./routes/authRoutes');
+const propertyRoutes = require("./routes/propertyRoutes")
 const PORT = 3000;
 const app = express();
 
@@ -10,6 +12,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 //connect to mongodb
 mongoose.connect(MONGO_URL).then(()=>{
@@ -19,6 +22,7 @@ mongoose.connect(MONGO_URL).then(()=>{
 });
 
 app.use("/",authRouts);
+app.use("/api",propertyRoutes);
 
 
 app.listen(PORT, () => {   

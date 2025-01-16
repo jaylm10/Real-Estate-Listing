@@ -1,0 +1,119 @@
+/* Filter Bar Container */
+.filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+ /* Input for Location */
+ .filter-input {
+     flex: 1;
+     padding: 8px;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     font-size: 14px;
+    }
+    
+    .filter-input.location-input {
+        flex: 1;
+        width: 400px; /* Increase width for the location input */
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+      
+  /* Dropdowns (For Sale, Beds, Baths) */
+  .filter-dropdown {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    min-width: 100px;
+  }
+  
+  /* Price Section (Min and Max Price) */
+  .filter-price {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .price-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 80px;
+  }
+  
+  /* Save Search Button */
+  .save-button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .save-button:hover {
+    background-color: #0056b3;
+  }
+  
+/* Media Query for smaller screens (Mobile) */
+@media (max-width: 768px) {
+    .filter-bar {
+      flex-direction: column;  /* Stack elements vertically on small screens */
+      gap: 15px;  /* Add more space between elements */
+    }
+  
+    .filter-input.location-input,
+    .filter-dropdown,
+    .price-input,
+    .save-button {
+      width: 100%;  /* Make all inputs and dropdowns take full width */
+    }
+  
+    .filter-price {
+      gap: 10px;  /* Adjust gap between price input fields */
+      flex-direction: column;  /* Stack price inputs vertically */
+      width: 100%;  /* Ensure that the filter-price container takes full width */
+    }
+  
+    .price-input {
+      width: 100%;  /* Make price inputs take full width */
+      margin-right: 0;  /* Remove the margin-right on smaller screens */
+    }
+  
+    .save-button {
+      width: 100%;  /* Make the save button take full width */
+    }
+  }
+  
+  /* Media Query for extra-small screens (Mobile portrait) */
+  @media (max-width: 480px) {
+    .filter-input.location-input,
+    .filter-dropdown,
+    .price-input,
+    .save-button {
+      font-size: 12px;  /* Reduce font size */
+      padding: 6px 10px;  /* Adjust padding */
+    }
+  
+    .filter-bar {
+      padding: 10px;  /* Reduce padding for smaller screens */
+    }
+  
+    .save-button {
+      font-size: 12px;  /* Reduce font size for the button */
+    }
+  }
+  
+  

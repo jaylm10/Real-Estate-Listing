@@ -39,7 +39,7 @@ function Header() {
       <div className={`menu ${menuOpen ? "open" : ""}`}>
         <ul>
           <li><Link to="/">Home</Link></li>
-          <li>Buy</li>
+          <li><Link to="/buy">Buy</Link></li>
           <li>Rent</li>
           <li><Link to="/sell">Sell</Link></li>
           <li>Find an Agent</li>
