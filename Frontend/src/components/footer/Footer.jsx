@@ -17,7 +17,7 @@ const Footer = () => {
           <div className="footer-column">
             <div className="logo-section">
             <div className="logo-icon"></div> {/* Placeholder for your logo icon */}
-            <h3>Homeverse</h3>
+            <h3>NextNest</h3>
             </div>
             <p>We not only help you find a house but also help you find a life.</p>
             <div className="contact-info">
