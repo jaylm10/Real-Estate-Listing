@@ -91,7 +91,7 @@
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: 100%; /* Align the top of the menu with the bottom of the button */
+    top: 100%; 
     left: 50%; /* Center horizontally relative to the button */
     transform: translateX(-50%); /* Shift left by 50% of the width to center align */
     background-color: #f8f9fa;
@@ -140,12 +140,12 @@
         padding: 10px 0;
         border-top: 1px solid #e0e0e0;
         z-index: 1000;
-        transform: translateX(-100%); /* Start completely off the screen to the left */
-        transition: transform 0.4s ease; /* Smooth slide-in animation */
+        transform: translateX(-100%); 
+        transition: transform 0.4s ease; 
     }
 
     .menu.open {
-        transform: translateX(0); /* Bring the menu into view */
+        transform: translateX(0); 
     }
 
     .menu ul {

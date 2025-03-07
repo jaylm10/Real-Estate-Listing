@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import jwt_decode from 'jwt-decode'
 
 
 import "./Header.css";
 import logo from "../../images/Logo.png";
 
 function Header() {
+  const [userName,setUserName] = useState("")
   const [menuOpen, setMenuOpen] = useState(false);
   const [isSignedIn, setIsSignedIn] = useState(false);
   const navigate = useNavigate();
@@ -18,14 +20,29 @@ function Header() {
     setIsSignedIn(!!token);
   }, []);
 
+  useEffect(() => {
+    if (menuOpen) {
+      setMenuOpen(false);
+    }
+  }, [navigate]);
+
+  useEffect(()=>{
+    const token  = localStorage.getItem("token")
+    if(token){
+      const decoded = jwt_decode(token)
+      setUserName(decoded.username)
+    }
+
+  },[localStorage.getItem("token")])
+
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
   const handleSignOut = () => {
-    localStorage.removeItem("token"); // Remove JWT
+    localStorage.removeItem("token"); 
     setIsSignedIn(false);
-    navigate("/"); // Redirect to homepage or sign-in page
+    navigate("/"); 
   };
 
   return (
@@ -42,7 +59,7 @@ function Header() {
           <li><Link to="/buy">Buy</Link></li>
           <li>Rent</li>
           <li><Link to="/sell">Sell</Link></li>
-          <li>Find an Agent</li>
+          <li>Find An Agent</li>
           <li>Home Loans</li>
           {!isSignedIn ? (
             <li>
@@ -51,7 +68,7 @@ function Header() {
           ) : (
             <li className="dropdown">
               <button className="dropdown-btn">
-                <FontAwesomeIcon icon={faUser} />
+                <strong>{userName}</strong>
               </button>
               <div className="dropdown-menu">
                 <Link to="/profile">Profile</Link>

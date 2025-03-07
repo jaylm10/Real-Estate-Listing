@@ -96,7 +96,8 @@ const Home = () => {
   ];
 
   return (
-    <>
+
+    <> 
       <div className="home">
         <div className="background-image">
           {/* Background image will be added via CSS */}
@@ -130,7 +131,8 @@ const Home = () => {
       <div className="bsr-section">
         <h1>Explore Services</h1>
         <BSRcard cards={bsrCards} />
-      </div>
+      </div> 
+      
 
     </>
   );

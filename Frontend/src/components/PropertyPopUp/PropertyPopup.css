@@ -1,0 +1,182 @@
+/* General styling */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #fff;
+  border-radius: 8px;
+  max-width: 1000px; /* Maximum width for large screens */
+  max-height: 90%; /* Prevent overflow */
+  width: 90%; /* Use percentage for responsiveness */
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto; 
+  position: relative;
+}
+
+/* Close button */
+.popup-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.popup-close-button:hover {
+  color: #ff4d4f;
+}
+
+/* Desktop layout */
+.popup-details {
+  display: flex;
+  gap: 20px; /* Consistent spacing between image and details */
+  align-items: flex-start; /* Align content to the top */
+}
+
+.popup-image {
+  flex: 0.5; /* Allocate 50% of the width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ensure the image container takes full height */
+  overflow: hidden; /* Prevent overflow if the image is larger */
+}
+
+.popup-image img {
+  width: 100%; /* Make the image fill the width */
+  height: 100%; /* Make the image fill the height */
+  /* object-fit: cover; Ensure the image covers the entire container without distortion */
+  border-radius: 8px; /* Optional: keep the rounded corners */
+}
+
+
+.popup-info {
+  flex: 0.5; /* Allocate equal width for text and image */
+  display: flex;
+  gap:100px;
+  justify-content: flex-start;
+}
+
+.property-price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.property-detail {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.property-description {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.owner-info h3 {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+.owner-info p{
+  display: flex;
+  gap: 10px;
+}
+.owner-info{
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .popup-content {
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+
+  .popup-details {
+    flex-direction: column; /* Stack image and details vertically */
+    gap: 15px; /* Smaller gap for mobile */
+  }
+
+  .popup-image {
+    margin-bottom: 10px; /* Space below the image */
+    flex: none; /* Reset flex */
+  }
+
+  .popup-info {
+    width: 100%; /* Full width for details */
+  }
+
+  .property-price {
+    font-size: 20px; /* Adjust font size */
+  }
+
+  .property-detail {
+    font-size: 14px; /* Adjust font size */
+    margin-bottom: 8px;
+  }
+
+  .property-description {
+    font-size: 12px; /* Adjust font size */
+  }
+
+  .owner-info h3 {
+    font-size: 16px; /* Adjust font size */
+  }
+}
+
+/* Additional styles for very small screens */
+@media (max-width: 480px) {
+  .popup-content {
+    padding: 15px;
+  }
+
+  .popup-details {
+    gap: 10px; /* Reduce gap further */
+  }
+
+  .property-price {
+    font-size: 18px;
+  }
+
+  .property-detail {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .property-description {
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  .owner-info h3 {
+    font-size: 12px;
+  }
+  .owner-info p {
+   font-size: 10px;
+  }
+
+}

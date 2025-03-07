@@ -24,6 +24,7 @@ const SignUp = () => {
           body:JSON.stringify({name,email,password})
       })
       if(response.ok){
+        alert("User Register Successful!")
           navigate("/signin");
       }
           else{

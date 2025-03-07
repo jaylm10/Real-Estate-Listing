@@ -1,10 +1,9 @@
 import React from "react";
 import "./BuyCard.css";
 
-const BuyCard = ({ property }) => {
-  // Accept a single property here
+const BuyCard = ({ property, onClick }) => {
   return (
-    <div className="buy-card-container">
+    <div className="buy-card-container" onClick={onClick}>
       <div className="buy-card">
         <div className="buy-card-image">
           <img src={`http://localhost:3000${property.image}`} alt="House" />

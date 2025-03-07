@@ -10,7 +10,7 @@ const FilterBar = ({ onFilterApply }) => {
   const [baths, setBaths] = useState("");
 
   const handleSaveSearch = (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
 
     const filters = {
       location,

@@ -25,9 +25,10 @@ const SignIn = () => {
 
         if(response.ok){
             localStorage.setItem("token",data.token);
+            alert("Sign In Successful!")
             navigate("/");
         } else{
-            alert("Error signing in user");
+            alert("Invalid Credentials");
         }
       
    };

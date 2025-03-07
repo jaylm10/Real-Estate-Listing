@@ -71,14 +71,27 @@ const getProperty = async (req, res) => {
 
     // Build dynamic query
     const query = {};
-    if (location) query.city = new RegExp(location, "i"); // Case-insensitive search
+    if (location) query.city = new RegExp(location, "i"); 
     if (saleOrRent) query.saleOrRent = saleOrRent;
-    if (minPrice) query.price = { ...query.price, $gte: parseFloat(minPrice) }; // Greater than or equal
-    if (maxPrice) query.price = { ...query.price, $lte: parseFloat(maxPrice) }; // Less than or equal
-    if (beds) query.beds = parseInt(beds); // Exact match for beds
-    if (baths) query.baths = parseInt(baths); // Exact match for baths
+    if (minPrice) query.price = { ...query.price, $gte: parseFloat(minPrice) }; 
+    if (maxPrice) query.price = { ...query.price, $lte: parseFloat(maxPrice) }; 
+    if (beds){
+      if(beds==="5+"){
+        query.beds = {$gte:5}
+      }else{
+        query.beds = parseInt(beds); 
+      }
 
-    // Fetch filtered properties from database
+    }
+    if (baths){
+      if(baths==="5+"){
+        query.baths = {$gte:5}
+      }else{
+        query.baths = parseInt(baths); 
+      }
+
+    }
+
     const properties = await Property.find(query);
 
     res.json(properties);
