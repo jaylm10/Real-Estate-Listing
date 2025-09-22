@@ -44,7 +44,7 @@ const SellForm = ({ isOpen, onClose }) => {
     }
   
     try {
-      const response = await fetch("http://localhost:3000/api/properties", {
+      const response = await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/properties`, {
         method: "POST",
         body: formData, // Use FormData for file uploads
       });

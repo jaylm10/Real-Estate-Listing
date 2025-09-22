@@ -14,7 +14,7 @@ const SignIn = () => {
 
    const handleSubmit = async (e) => {
       e.preventDefault();
-      const response = await fetch("http://localhost:3000/signin",{
+      const response = await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/signin`,{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"

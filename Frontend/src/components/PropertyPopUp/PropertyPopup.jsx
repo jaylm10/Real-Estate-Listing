@@ -10,7 +10,7 @@ const PropertyPopup = ({ property, onClose }) => {
           &times;
         </button>
         <div className="popup-image">
-          <img src={`http://localhost:3000${property.image}`} alt="Property" />
+          <img src={`${import.meta.env.VITE_REACT_APP_BACKEND_URL}${property.image}`} alt="Property" />
         </div>
 
         <div className="popup-details">

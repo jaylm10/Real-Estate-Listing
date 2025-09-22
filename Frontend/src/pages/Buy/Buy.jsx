@@ -14,7 +14,7 @@ const Buy = () => {
   const fetchProperties = (filters = {}) => {
     const queryParams = new URLSearchParams(filters).toString();
 
-    fetch(`http://localhost:3000/api/properties?${queryParams}`)
+    fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/properties?${queryParams}`)
       .then((response) => response.json())
       .then((data) => {
         console.log("Fetched Properties:", data);

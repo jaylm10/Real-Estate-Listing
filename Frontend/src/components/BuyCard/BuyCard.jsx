@@ -6,7 +6,7 @@ const BuyCard = ({ property, onClick }) => {
     <div className="buy-card-container" onClick={onClick}>
       <div className="buy-card">
         <div className="buy-card-image">
-          <img src={`http://localhost:3000${property.image}`} alt="House" />
+          <img src={`${import.meta.env.VITE_REACT_APP_BACKEND_URL}${property.image}`} alt="House" />
         </div>
         <div className="buy-card-info">
           <h2 className="buy-card-price">${property.price}</h2>
